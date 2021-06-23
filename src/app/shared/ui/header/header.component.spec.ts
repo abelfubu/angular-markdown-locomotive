@@ -33,7 +33,6 @@ describe('HeaderComponent', () => {
     const src = 'abcd'
     component.logo = src
     fixture.detectChanges()
-    console.log(fixture.nativeElement.innerHTML)
     expect(fixture.nativeElement.querySelector('img').src).toContain(src)
   })
 })
