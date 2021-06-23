@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@use "base" as *;
+@import '~locomotive-scroll/dist/locomotive-scroll.css';
+@import 'prismjs/themes/prism-okaidia.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-size: 22px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}

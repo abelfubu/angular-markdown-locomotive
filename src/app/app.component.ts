@@ -1,32 +1,59 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import { ResizeObserver } from '@juggle/resize-observer'
+import LocomotiveScroll from 'locomotive-scroll'
+// import 'prismjs/components/prism-cpp'
+// import 'prismjs/components/prism-csharp'
+// import 'prismjs/components/prism-css'
+// import 'prismjs/components/prism-diff'
+// import 'prismjs/components/prism-java'
+// import 'prismjs/components/prism-javascript'
+// import 'prismjs/components/prism-perl'
+// import 'prismjs/prism'
 
 @Component({
   selector: 'md-root',
   template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center" class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <span style="display: block">{{ title }} app is running!</span>
-      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </div>
-    <h2>Here are some links to help you start: </h2>
-    <ul>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
-    <router-outlet></router-outlet>
+    <section data-scroll-container #el>
+      <md-header title="Markdown" [logo]="logo">
+        <li #li>Home</li>
+        <li #li>About</li>
+      </md-header>
+      <main>
+        <ngx-md [path]="url"></ngx-md>
+        <router-outlet></router-outlet>
+      </main>
+    </section>
   `,
-  styles: []
+  styles: [
+    `
+      main {
+        padding: 2rem 8vw;
+      }
+    `,
+  ],
 })
-export class AppComponent {
-  title = 'markdown';
+export class AppComponent implements OnInit, AfterViewInit {
+  scroll!: LocomotiveScroll
+  @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>
+  url = 'assets/a.md'
+  logo = 'assets/images/palette.svg'
+
+  ngOnInit() {
+    this.scroll = new LocomotiveScroll({
+      el: this.el.nativeElement,
+      smooth: true,
+    })
+  }
+
+  ngAfterViewInit() {
+    const ro = new ResizeObserver((entries, observer) => {
+      entries.forEach((entry, index) => {
+        const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0]
+        if (this.scroll) {
+          this.scroll.update()
+        }
+      })
+    })
+    ro.observe(this.el.nativeElement)
+  }
 }
