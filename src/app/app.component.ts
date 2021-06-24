@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { ResizeObserver } from '@juggle/resize-observer'
 import LocomotiveScroll from 'locomotive-scroll'
+import { DataService } from './services/data.service'
 // import 'prismjs/components/prism-cpp'
 // import 'prismjs/components/prism-csharp'
 // import 'prismjs/components/prism-css'
@@ -22,6 +23,7 @@ import LocomotiveScroll from 'locomotive-scroll'
         <ngx-md [path]="url"></ngx-md>
         <router-outlet></router-outlet>
       </main>
+      <pre>{{ files | async | json }}</pre>
     </section>
   `,
   styles: [
@@ -37,6 +39,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>
   url = 'assets/a.md'
   logo = 'assets/images/palette.svg'
+  files = this.dataService.repoFiles$
+
+  constructor(private readonly dataService: DataService) {}
 
   ngOnInit() {
     this.scroll = new LocomotiveScroll({
