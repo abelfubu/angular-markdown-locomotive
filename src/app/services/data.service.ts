@@ -7,7 +7,7 @@ import { environment } from 'environments/environment'
   providedIn: 'root',
 })
 export class DataService {
-  repoFiles$ = this.http.get<RepoFile>(environment.url)
+  repoFiles$ = this.http.get<RepoFile[]>(environment.url)
 
   constructor(private readonly http: HttpClient) {}
 }

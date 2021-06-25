@@ -19,11 +19,11 @@ import { DataService } from './services/data.service'
         <li #li>Home</li>
         <li #li>About</li>
       </md-header>
-      <main>
-        <ngx-md [path]="url"></ngx-md>
+
+      <main *ngIf="files$ | async as files">
+        <ngx-md [path]="files[0].download_url"></ngx-md>
         <router-outlet></router-outlet>
       </main>
-      <pre>{{ files | async | json }}</pre>
     </section>
   `,
   styles: [
@@ -37,9 +37,9 @@ import { DataService } from './services/data.service'
 export class AppComponent implements OnInit, AfterViewInit {
   scroll!: LocomotiveScroll
   @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>
-  url = 'assets/a.md'
+  url = 'assets/md/a.md'
   logo = 'assets/images/palette.svg'
-  files = this.dataService.repoFiles$
+  files$ = this.dataService.repoFiles$
 
   constructor(private readonly dataService: DataService) {}
 
