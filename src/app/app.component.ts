@@ -25,6 +25,7 @@ import { DataService } from './services/data.service'
         <router-outlet></router-outlet>
       </main>
     </section>
+    <md-cursor></md-cursor>
   `,
   styles: [
     `
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.scroll = new LocomotiveScroll({
       el: this.el.nativeElement,
       smooth: true,
+      direction: 'vertical',
     })
   }
 

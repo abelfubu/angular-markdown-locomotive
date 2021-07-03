@@ -1,11 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ContentChildren,
-  Input,
-  NgModule,
-  QueryList,
-} from '@angular/core'
+import { Component, ContentChildren, Input, NgModule, QueryList } from '@angular/core'
 
 @Component({
   selector: 'md-header',
@@ -21,10 +14,10 @@ import {
   styles: [
     `
       @use "colors";
+      @use "mixins";
 
       :host {
-        display: flex;
-        align-items: center;
+        @include mixins.flex;
         height: 3.5rem;
         padding: 0 8vw;
         background-color: colors.$dark;
@@ -42,7 +35,6 @@ import {
       }
 
       .logo {
-        flex-grow: 1;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -65,14 +57,10 @@ import {
     `,
   ],
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent {
   @ContentChildren('li') lis!: QueryList<HTMLLIElement>
   @Input() logo!: string
   @Input() title!: string
-
-  ngAfterViewInit() {
-    console.log(this.lis)
-  }
 }
 
 @NgModule({

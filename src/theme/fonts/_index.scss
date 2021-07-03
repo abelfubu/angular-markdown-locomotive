@@ -1,2 +1,8 @@
 $title: 'Staatliches', cursive;
 $normal: 'Source Sans Pro', sans-serif;
+$hand: 'Hand';
+
+@font-face {
+  font-family: 'Hand';
+  src: url(/assets/fonts/DK.ttf);
+}

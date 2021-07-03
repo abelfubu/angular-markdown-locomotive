@@ -2,11 +2,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
+    "baseUrl": "./src",
     "paths": {
       "@models/*": ["app/models/*"],
-      "@ui/*": ["app/shared/ui/*"]
+      "@ui/*": ["app/shared/ui/*"],
+      "@utils/*": ["app/utils/*"],
+      "@env/*": ["environments/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
