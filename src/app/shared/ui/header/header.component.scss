@@ -1,12 +1,13 @@
 @use 'mixins';
 
 :host {
-  @include mixins.flex;
   background-color: var(--dark);
   box-shadow: 0 1px 6px 1px #23232350;
+}
+
+md-container {
+  @include mixins.flex;
   height: 3.5rem;
-  padding: 0 8vw;
-  z-index: 3030;
 }
 
 h3 {

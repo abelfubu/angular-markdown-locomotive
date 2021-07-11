@@ -2,14 +2,6 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { ResizeObserver } from '@juggle/resize-observer'
 import LocomotiveScroll from 'locomotive-scroll'
 import { DataService } from './services/data.service'
-// import 'prismjs/components/prism-cpp'
-// import 'prismjs/components/prism-csharp'
-// import 'prismjs/components/prism-css'
-// import 'prismjs/components/prism-diff'
-// import 'prismjs/components/prism-java'
-// import 'prismjs/components/prism-javascript'
-// import 'prismjs/components/prism-perl'
-// import 'prismjs/prism'
 
 @Component({
   selector: 'md-root',
@@ -20,12 +12,14 @@ import { DataService } from './services/data.service'
         <li #li>About</li>
       </md-header>
 
-      <main *ngIf="files$ | async as files">
-        <ngx-md [path]="files[1].download_url"></ngx-md>
+      <md-container>
         <router-outlet></router-outlet>
+      </md-container>
+
+      <main *ngIf="files$ | async as files">
+        <!-- <ngx-md [path]="files[1].download_url"></ngx-md> -->
       </main>
     </section>
-    <md-cursor></md-cursor>
   `,
   styles: [
     `
@@ -47,7 +41,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.scroll = new LocomotiveScroll({
       el: this.el.nativeElement,
       smooth: true,
-      direction: 'vertical',
+      scrollFromAnywhere: true,
+      resetNativeScroll: false,
     })
   }
 

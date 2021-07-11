@@ -1,17 +1,18 @@
 // const imagesLoaded = require('imagesloaded');
 
 // Map number x from range [a, b] to [c, d]
-const map = (x: any, a: any, b: any, c: any, d: any) => ((x - a) * (d - c)) / (b - a) + c
+const map = (x: number, a: number, b: number, c: number, d: number): number =>
+  ((x - a) * (d - c)) / (b - a) + c
 
 // Linear interpolation
-const lerp = (a: any, b: any, n: any) => (1 - n) * a + n * b
+const lerp = (a: number, b: number, n: number): number => (1 - n) * a + n * b
 
-const calcWinsize = () => {
+const calcWinsize = (): { width: number; height: number } => {
   return { width: window.innerWidth, height: window.innerHeight }
 }
 
 // Gets the mouse position
-const getMousePos = (e: MouseEvent) => {
+const getMousePos = (e: MouseEvent): { x: number; y: number } => {
   let posx = 0
   let posy = 0
   if (!e) e = window.event as MouseEvent
@@ -19,14 +20,14 @@ const getMousePos = (e: MouseEvent) => {
     posx = e.pageX
     posy = e.pageY
   } else if (e.clientX || e.clientY) {
-    posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft
-    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop
+    posx = e.clientX + document.body.scrollLeft
+    posy = e.clientY + document.body.scrollTop
   }
 
   return { x: posx, y: posy }
 }
 
-const randomFloat = (min: number, max: number) =>
+const randomFloat = (min: number, max: number): number =>
   parseFloat(Math.min(min + Math.random() * (max - min), max).toFixed(2))
 
 // // Preload images
