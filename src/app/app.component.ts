@@ -15,7 +15,7 @@ import { DataService } from './services/data.service'
   selector: 'md-root',
   template: `
     <section data-scroll-container #el>
-      <md-header title="Markdown" [logo]="logo">
+      <md-header>
         <li #li>Home</li>
         <li #li>About</li>
       </md-header>
@@ -39,7 +39,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   scroll!: LocomotiveScroll
   @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>
   url = 'assets/md/a.md'
-  logo = 'assets/images/palette.svg'
   files$ = this.dataService.repoFiles$
 
   constructor(private readonly dataService: DataService) {}

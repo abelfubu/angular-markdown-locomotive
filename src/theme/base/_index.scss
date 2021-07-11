@@ -1,33 +1,34 @@
-@forward "text";
-@forward "button";
-@forward "colors";
+@forward 'text';
+@forward 'button';
+@forward 'colors';
+@use 'fonts';
 
 * {
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     box-sizing: inherit;
   }
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: var(--dark);
   color: var(--contrast);
+  font-family: fonts.$normal;
 }
 
 ::selection {
-  background-color: var(--lightest-navy);
-  color: var(--lightest-slate);
+  background-color: var(--primary);
+  color: var(--dark);
 }
 
 :focus {
-  outline: 2px dashed var(--green);
+  outline: 2px dashed var(--accent);
   outline-offset: 3px;
 }
