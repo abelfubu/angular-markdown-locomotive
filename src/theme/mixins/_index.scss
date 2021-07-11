@@ -1,17 +1,17 @@
 @mixin grid($columns: 3, $gap: 1rem) {
   display: grid;
-  grid-template-columns: repeat($columns);
   gap: $gap;
+  grid-template-columns: repeat($columns);
 }
 
 @mixin auto-grid($min: 300px, $gap: 1rem) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min($min, 100%), 1fr));
   gap: $gap;
+  grid-template-columns: repeat(auto-fill, minmax(min($min, 100%), 1fr));
 }
 
 @mixin flex($justify: space-between, $align: center) {
+  align-items: $align;
   display: flex;
   justify-content: $justify;
-  align-items: $align;
 }

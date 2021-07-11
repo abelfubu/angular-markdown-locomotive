@@ -21,7 +21,7 @@ import { DataService } from './services/data.service'
       </md-header>
 
       <main *ngIf="files$ | async as files">
-        <ngx-md [path]="files[0].download_url"></ngx-md>
+        <ngx-md [path]="files[1].download_url"></ngx-md>
         <router-outlet></router-outlet>
       </main>
     </section>
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   constructor(private readonly dataService: DataService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.scroll = new LocomotiveScroll({
       el: this.el.nativeElement,
       smooth: true,
@@ -52,15 +52,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     })
   }
 
-  ngAfterViewInit() {
-    const ro = new ResizeObserver((entries, observer) => {
-      entries.forEach((entry, index) => {
-        const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0]
-        if (this.scroll) {
-          this.scroll.update()
-        }
-      })
-    })
+  ngAfterViewInit(): void {
+    const ro = new ResizeObserver((entries) =>
+      entries.forEach(() => this.scroll && this.scroll.update()),
+    )
     ro.observe(this.el.nativeElement)
   }
 }

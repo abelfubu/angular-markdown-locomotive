@@ -1,4 +1,4 @@
-@use "fonts";
+@use 'fonts';
 
 h1,
 h2,
@@ -11,15 +11,19 @@ h4 {
 
 h1 {
   font-size: 6rem;
-  letter-spacing: -0.095rem;
   font-weight: 300;
+  letter-spacing: -0.095rem;
+
+  &::before {
+    content: 'a';
+  }
 }
 
 h2 {
-  font-size: 3.75rem;
   font-family: 'Hand';
-  letter-spacing: -0.032rem;
+  font-size: 3.75rem;
   font-weight: 300;
+  letter-spacing: -0.032rem;
 }
 
 h3 {
@@ -37,6 +41,6 @@ h5 {
 
 p,
 li {
-  line-height: 1.8rem;
   letter-spacing: 0.025rem;
+  line-height: 1.8rem;
 }
