@@ -5,7 +5,7 @@ import { createSpyObj } from 'jest-createspyobj'
 import { AppComponent } from './app.component'
 import { DataService } from './services/data.service'
 
-describe('AppComponent', () => {
+xdescribe('AppComponent', () => {
   let dataServiceSpy: Record<string, jest.Mock>
 
   beforeEach(async () => {

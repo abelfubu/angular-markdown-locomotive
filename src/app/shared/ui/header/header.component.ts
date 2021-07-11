@@ -13,14 +13,13 @@ import { Component, ContentChildren, Input, NgModule, QueryList } from '@angular
   `,
   styles: [
     `
-      @use "colors";
       @use "mixins";
 
       :host {
         @include mixins.flex;
         height: 3.5rem;
         padding: 0 8vw;
-        background-color: colors.$dark;
+        background-color: var(--dark);
         box-shadow: 0 1px 6px 1px #23232350;
         z-index: 3030;
       }
@@ -31,7 +30,7 @@ import { Component, ContentChildren, Input, NgModule, QueryList } from '@angular
 
       h3 {
         padding: 0 0.5rem;
-        color: colors.$primary;
+        color: var(--primary);
       }
 
       .logo {
@@ -48,7 +47,7 @@ import { Component, ContentChildren, Input, NgModule, QueryList } from '@angular
       ul::ng-deep li {
         margin-left: 1rem;
         cursor: pointer;
-        color: colors.$primary;
+        color: var(--primary);
 
         &:hover {
           text-decoration: underline;

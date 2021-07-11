@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { HeaderModule } from './header/header.component'
-import { CursorComponent, CursorModule } from './cursor/cursor.component'
+import { CursorModule } from './cursor/cursor.component'
 
 @NgModule({
   imports: [HeaderModule, CursorModule],

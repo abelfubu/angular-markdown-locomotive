@@ -1,1 +1,33 @@
 @forward "text";
+@forward "button";
+@forward "colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--dark);
+  color: var(--contrast);
+}
+
+::selection {
+  background-color: var(--lightest-navy);
+  color: var(--lightest-slate);
+}
+
+:focus {
+  outline: 2px dashed var(--green);
+  outline-offset: 3px;
+}

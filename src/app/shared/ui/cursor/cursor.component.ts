@@ -15,65 +15,8 @@ import gsap from 'gsap'
 
 @Component({
   selector: 'md-cursor',
-  template: `
-    <svg class="cursor" width="220" height="220" viewBox="0 0 220 220" #svg>
-      <defs>
-        <filter
-          id="filter-1"
-          x="-50%"
-          y="-50%"
-          width="200%"
-          height="200%"
-          filterUnits="objectBoundingBox"
-        >
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0"
-            numOctaves="1"
-            result="warp"
-            #feTurbulence
-          />
-          <feOffset dx="-30" result="warpOffset" />
-          <feDisplacementMap
-            xChannelSelector="R"
-            yChannelSelector="G"
-            scale="30"
-            in="SourceGraphic"
-            in2="warpOffset"
-          />
-        </filter>
-      </defs>
-      <circle class="cursor__inner" cx="110" cy="110" r="60" #cursorInner />
-    </svg>
-  `,
-  styles: [
-    `
-      svg {
-        opacity: 0.3;
-      }
-
-      .cursor {
-        display: none;
-      }
-
-      @media (any-pointer: fine) {
-        .cursor {
-          position: fixed;
-          top: 0;
-          left: 0;
-          display: block;
-          pointer-events: none;
-          opacity: 0;
-        }
-        .cursor__inner {
-          fill: transparent;
-          mix-blend-mode: lighten;
-          stroke: red;
-          stroke-width: 1px;
-        }
-      }
-    `,
-  ],
+  templateUrl: './cursor.component.html',
+  styleUrls: ['./cursor.component.scss'],
 })
 export class CursorComponent implements AfterViewInit, OnDestroy {
   mouse = { x: 0, y: 0 }
@@ -86,17 +29,20 @@ export class CursorComponent implements AfterViewInit, OnDestroy {
     ty: { previous: 0, current: 0, amt: 0.2 },
     radius: { previous: 60, current: 60, amt: 0.2 },
   }
-  listeners = [() => {}]
+  listeners = [(): unknown => null]
 
   @ViewChild('cursorInner', { static: true }) cursorInner!: ElementRef<SVGCircleElement>
   @ViewChild('feTurbulence', { static: true }) feTurbulence!: ElementRef
   @ViewChild('svg', { static: true }) svg!: ElementRef
 
-  @HostListener('window:mousemove', ['$event']) onMouseMove(event: MouseEvent) {
+  @HostListener('window:mousemove', ['$event']) onMouseMove(event: MouseEvent): void {
     this.mouse = getMousePos(event)
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2) {}
+  constructor(
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly renderer: Renderer2,
+  ) {}
 
   ngAfterViewInit(): void {
     this.createTimeline()
@@ -105,7 +51,7 @@ export class CursorComponent implements AfterViewInit, OnDestroy {
     this.queryHoverableItems()
   }
 
-  onMouseMoveEv = () => {
+  onMouseMoveEv = (): void => {
     this.renderedStyles.tx.previous = this.renderedStyles.tx.current =
       this.mouse.x - this.bounds.width / 2
     this.renderedStyles.ty.previous = this.renderedStyles.ty.current =
@@ -123,7 +69,7 @@ export class CursorComponent implements AfterViewInit, OnDestroy {
     })
   }
 
-  render() {
+  render(): void {
     this.renderedStyles.tx.current = this.mouse.x - this.bounds.width / 2
     this.renderedStyles.ty.current = this.mouse.y - this.bounds.height / 2
 
@@ -144,7 +90,7 @@ export class CursorComponent implements AfterViewInit, OnDestroy {
     requestAnimationFrame(() => this.render())
   }
 
-  createTimeline() {
+  createTimeline(): void {
     // init timeline
     this.tl = gsap
       .timeline({
@@ -169,17 +115,17 @@ export class CursorComponent implements AfterViewInit, OnDestroy {
       })
   }
 
-  enter() {
+  enter(): void {
     this.renderedStyles.radius.current = 100
     this.tl.restart()
   }
 
-  leave() {
+  leave(): void {
     this.renderedStyles.radius.current = 60
     this.tl.progress(1).kill()
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.listeners.forEach((fn) => fn())
   }
 }
