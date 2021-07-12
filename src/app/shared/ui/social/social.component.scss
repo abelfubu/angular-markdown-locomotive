@@ -1,0 +1,38 @@
+.left,
+.right {
+  align-items: center;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.left {
+  font-size: 1.5rem;
+  left: 1rem;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+}
+
+.right {
+  right: 1rem;
+
+  a {
+    writing-mode: vertical-lr;
+  }
+}
+
+a {
+  color: var(--bg-dark);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--primary);
+  }
+}

@@ -1,11 +1,9 @@
-@use 'mixins';
-
 :host {
   counter-set: h4 0;
   display: block;
 }
 
-h4 {
+::ng-deep h4 {
   counter-increment: h4 1;
   position: relative;
 
@@ -24,40 +22,5 @@ h4 {
     position: absolute;
     top: 45%;
     width: 200px;
-  }
-}
-
-img {
-  aspect-ratio: 12 / 16;
-  mix-blend-mode: multiply;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-}
-
-.hero {
-  @include mixins.flex(center, flex-start);
-  flex-direction: column;
-  min-height: 50vh;
-  padding-bottom: 2rem;
-
-  p {
-    max-width: 500px;
-    padding: 2rem 0;
-  }
-}
-
-.about {
-  // @include mixins.auto-grid(450px, 3rem);
-  align-items: center;
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: 2fr 1fr;
-  min-height: 75vh;
-
-  .img {
-    background-color: var(--primary);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
   }
 }

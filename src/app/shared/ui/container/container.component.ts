@@ -7,7 +7,7 @@ import { Component, HostBinding, Input, NgModule } from '@angular/core'
     `
       :host {
         display: block;
-        padding: 2rem;
+        padding: 2rem 4rem;
         margin: auto;
       }
     `,

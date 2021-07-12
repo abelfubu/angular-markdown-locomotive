@@ -7,14 +7,7 @@ import { Component, Input } from '@angular/core'
       <ng-content></ng-content>
     </section>
   `,
-  styles: [
-    `
-      :host::ng-deep li::marker {
-        content: '*';
-        color: var(--primary);
-      }
-    `,
-  ],
+  styleUrls: ['./tab.component.scss'],
 })
 export class TabComponent {
   @Input() title!: string

@@ -3,8 +3,9 @@ import { ButtonModule } from './button/button.component'
 import { ContainerModule } from './container/container.component'
 import { HeaderModule } from './header/header.component'
 import { LogoModule } from './logo/logo.component'
+import { SocialModule } from './social/social.component'
 
-const MODULES = [HeaderModule, LogoModule, ContainerModule, ButtonModule]
+const MODULES = [HeaderModule, LogoModule, ContainerModule, ButtonModule, SocialModule]
 @NgModule({
   imports: [...MODULES],
   exports: [...MODULES],

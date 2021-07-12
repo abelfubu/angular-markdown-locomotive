@@ -20,6 +20,7 @@ import { DataService } from './services/data.service'
         <!-- <ngx-md [path]="files[1].download_url"></ngx-md> -->
       </main>
     </section>
+    <md-social></md-social>
   `,
   styles: [
     `
