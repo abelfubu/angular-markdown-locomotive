@@ -1,5 +1,15 @@
 import { CommonModule } from '@angular/common'
-import { Component, HostBinding, Input, NgModule } from '@angular/core'
+import {
+  AfterContentInit,
+  Component,
+  ElementRef,
+  HostBinding,
+  Input,
+  NgModule,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core'
+import { CursorComponent } from '@ui/cursor/cursor.component'
 
 type ButtonType = 'primary' | 'secondary' | 'outline'
 
@@ -7,15 +17,26 @@ type ButtonType = 'primary' | 'secondary' | 'outline'
   selector: 'md-button',
   template: `
     <a [href]="href">
-      <button data-hover=""><ng-content></ng-content></button>
+      <button #hover><ng-content></ng-content></button>
     </a>
   `,
 })
-export class ButtonComponent {
+export class ButtonComponent implements AfterContentInit, OnDestroy {
   @Input() type: ButtonType = 'primary'
   @Input() href!: string
   @HostBinding('class') get className(): ButtonType {
     return this.type
+  }
+  @ViewChild('hover', { static: true }) hover!: ElementRef
+
+  constructor(private readonly host: CursorComponent) {}
+
+  ngAfterContentInit(): void {
+    this.host.addHoverElements([this.hover])
+  }
+
+  ngOnDestroy(): void {
+    this.host.removeHoverElements([this.hover])
   }
 }
 

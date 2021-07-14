@@ -5,9 +5,9 @@ import {
   ElementRef,
   NgModule,
   QueryList,
-  Renderer2,
 } from '@angular/core'
 import { ContainerModule } from '@ui/container/container.component'
+import { CursorComponent } from '@ui/cursor/cursor.component'
 import { LogoModule } from '@ui/logo/logo.component'
 
 @Component({
@@ -26,14 +26,12 @@ import { LogoModule } from '@ui/logo/logo.component'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterContentInit {
-  @ContentChildren('li') lis!: QueryList<ElementRef>
+  @ContentChildren('hover') lis!: QueryList<ElementRef>
 
-  constructor(private readonly renderer: Renderer2) {}
+  constructor(private readonly host: CursorComponent) {}
 
   ngAfterContentInit(): void {
-    this.lis.forEach((li) => {
-      this.renderer.setAttribute(li.nativeElement, 'data-hover', '')
-    })
+    this.host.addHoverElements(this.lis)
   }
 }
 

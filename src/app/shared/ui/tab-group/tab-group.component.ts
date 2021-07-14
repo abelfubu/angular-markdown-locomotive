@@ -1,5 +1,14 @@
 import { CommonModule } from '@angular/common'
-import { AfterContentInit, Component, ContentChildren, NgModule, QueryList } from '@angular/core'
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  ElementRef,
+  NgModule,
+  QueryList,
+  ViewChildren,
+} from '@angular/core'
+import { CursorComponent } from '@ui/cursor/cursor.component'
 import { TabComponent } from '@ui/tab/tab.component'
 
 @Component({
@@ -18,10 +27,12 @@ import { TabComponent } from '@ui/tab/tab.component'
 })
 export class TabGroupComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>
+  @ViewChildren('hover') hoverEls!: QueryList<ElementRef>
+
+  constructor(private readonly host: CursorComponent) {}
 
   ngAfterContentInit(): void {
     const selectedTab = this.tabs.find((tab) => tab.selected)
-    console.log(this.tabs.first)
 
     if (!selectedTab && this.tabs.first) {
       this.tabs.first.selected = true

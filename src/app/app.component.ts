@@ -6,21 +6,23 @@ import { DataService } from './services/data.service'
 @Component({
   selector: 'md-root',
   template: `
-    <section data-scroll-container #el>
-      <md-header>
-        <li #li>Home</li>
-        <li #li>About</li>
-      </md-header>
+    <md-cursor>
+      <section data-scroll-container #el>
+        <md-header>
+          <li #hover>Home</li>
+          <li #hover>About</li>
+        </md-header>
 
-      <md-container>
-        <router-outlet></router-outlet>
-      </md-container>
+        <md-container>
+          <router-outlet></router-outlet>
+        </md-container>
 
-      <main *ngIf="files$ | async as files">
-        <!-- <ngx-md [path]="files[1].download_url"></ngx-md> -->
-      </main>
-    </section>
-    <md-social></md-social>
+        <main *ngIf="files$ | async as files">
+          <!-- <ngx-md [path]="files[1].download_url"></ngx-md> -->
+        </main>
+      </section>
+      <md-social></md-social>
+    </md-cursor>
   `,
   styles: [
     `
