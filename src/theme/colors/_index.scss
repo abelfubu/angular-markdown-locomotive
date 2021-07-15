@@ -1,12 +1,16 @@
 :root {
-  --dark: #14171c;
-  --bg-light: #cfdbd5;
+  --dark: #cfdbd5;
   --bg-dark: #333533;
-  --contrast: #e8eddf;
+  --contrast: #14171c;
   --contrast-dark: #14171c;
   // --primary: #cddc39;
   --primary: #26c6da;
   --primary-light: #b2dbbf;
-  --primary-alpha: #26c6da20;
+  --primary-alpha: #26c6da50;
   --accent: #ff1654;
+
+  .dark-mode {
+    --dark: #14171c;
+    --contrast: #e8eddf;
+  }
 }

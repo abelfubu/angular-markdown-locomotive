@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import { DOCUMENT } from '@angular/common'
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core'
 import { ResizeObserver } from '@juggle/resize-observer'
 import LocomotiveScroll from 'locomotive-scroll'
 import { DataService } from './services/data.service'
@@ -11,6 +12,7 @@ import { DataService } from './services/data.service'
         <md-header>
           <li #hover>Home</li>
           <li #hover>About</li>
+          <i class="fas fa-lightbulb" #hover (click)="toggleDarkMode()"></i>
         </md-header>
 
         <md-container>
@@ -29,6 +31,12 @@ import { DataService } from './services/data.service'
       main {
         padding: 2rem 8vw;
       }
+
+      i {
+        color: var(--primary);
+        cursor: pointer;
+        margin-left: 1rem;
+      }
     `,
   ],
 })
@@ -38,7 +46,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   url = 'assets/md/a.md'
   files$ = this.dataService.repoFiles$
 
-  constructor(private readonly dataService: DataService) {}
+  constructor(
+    private readonly dataService: DataService,
+    @Inject(DOCUMENT) private readonly document: Document,
+  ) {}
 
   ngOnInit(): void {
     this.scroll = new LocomotiveScroll({
@@ -54,5 +65,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       entries.forEach(() => this.scroll && this.scroll.update()),
     )
     ro.observe(this.el.nativeElement)
+  }
+
+  toggleDarkMode(): void {
+    this.document.body.classList.toggle('dark-mode')
   }
 }

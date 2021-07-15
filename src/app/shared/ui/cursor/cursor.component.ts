@@ -21,10 +21,10 @@ type ElementRefList = ElementRef[] | QueryList<ElementRef>
   styleUrls: ['./cursor.component.scss'],
 })
 export class CursorComponent implements AfterContentInit, OnDestroy {
-  @Input() color = 'var(--primary)'
+  @Input() color = 'var(--primary-alpha)'
   @Input() radius = 40
 
-  hoverElements!: ElementRef[]
+  hoverElements: ElementRef[] = []
 
   @ViewChild('cursorInner', { static: true }) cursorInner!: ElementRef<SVGCircleElement>
   @ViewChild('feTurbulence', { static: true }) feTurbulence!: ElementRef
@@ -74,7 +74,7 @@ export class CursorComponent implements AfterContentInit, OnDestroy {
   }
 
   addHoverElements(elements: ElementRefList): void {
-    this.hoverElements = [...elements]
+    this.hoverElements = [...this.hoverElements, ...elements]
     this.addHoverListeners(elements)
   }
 

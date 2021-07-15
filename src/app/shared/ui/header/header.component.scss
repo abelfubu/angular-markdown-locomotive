@@ -3,11 +3,11 @@
 :host {
   background-color: var(--dark);
   box-shadow: 0 1px 6px 1px #23232350;
+  height: 4.5rem;
 }
 
 md-container {
   @include mixins.flex;
-  height: 3.5rem;
 }
 
 h3 {
@@ -22,6 +22,7 @@ h3 {
 }
 
 ul {
+  align-items: center;
   counter-reset: css-counter 0;
   display: flex;
   list-style: none;
