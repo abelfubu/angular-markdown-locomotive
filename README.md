@@ -30,5 +30,5 @@ npx lint-staged --verbose
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run test:coverage:headless
+ng test --coverage --watch=false
 ```
