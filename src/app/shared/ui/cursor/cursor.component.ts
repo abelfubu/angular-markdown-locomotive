@@ -21,15 +21,18 @@ type ElementRefList = ElementRef[] | QueryList<ElementRef>
   styleUrls: ['./cursor.component.scss'],
 })
 export class CursorComponent implements AfterContentInit, OnDestroy {
-  @Input() color = 'var(--primary-alpha)'
   @Input() radius = 40
-
-  hoverElements: ElementRef[] = []
+  @Input() color = 'var(--accent)'
 
   @ViewChild('cursorInner', { static: true }) cursorInner!: ElementRef<SVGCircleElement>
   @ViewChild('feTurbulence', { static: true }) feTurbulence!: ElementRef
   @ViewChild('svg', { static: true }) svg!: ElementRef
 
+  @HostListener('window:mousemove', ['$event']) onMouseMove(event: unknown): void {
+    this.mouse = getMousePos(event as MouseEvent)
+  }
+
+  hoverElements: ElementRef[] = []
   mouse = { x: 0, y: 0 }
   bounds!: DOMRect
   filterId = '#filter-1'
@@ -41,10 +44,6 @@ export class CursorComponent implements AfterContentInit, OnDestroy {
     radius: { previous: this.radius, current: this.radius, amt: 0.5 },
   }
   listeners: (() => void)[] = []
-
-  @HostListener('window:mousemove', ['$event']) onMouseMove(event: unknown): void {
-    this.mouse = getMousePos(event as MouseEvent)
-  }
 
   constructor(private readonly renderer: Renderer2) {}
 

@@ -13,18 +13,31 @@ h1 {
   display: inline-block;
   font-size: 4rem;
   position: relative;
-  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
 
   &::before {
     background-color: var(--primary-alpha);
-    border-radius: 0.5rem;
-    bottom: 0;
-    content: '';
-    height: 2rem;
+    border-radius: 2rem;
+    bottom: 0.5rem;
+    content: '<h1>';
+    height: 1.3rem;
     left: -1rem;
     position: absolute;
     width: 100%;
     z-index: -1;
+  }
+
+  &::after {
+    bottom: 1rem;
+    content: '</h1>';
+    position: absolute;
+    right: 0;
   }
 }
 

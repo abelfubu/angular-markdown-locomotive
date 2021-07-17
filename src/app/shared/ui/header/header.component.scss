@@ -10,17 +10,6 @@ md-container {
   @include mixins.flex;
 }
 
-h3 {
-  color: var(--primary);
-  padding: 0 0.5rem;
-}
-
-.logo {
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-}
-
 ul {
   align-items: center;
   counter-reset: css-counter 0;

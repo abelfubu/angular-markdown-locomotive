@@ -14,7 +14,7 @@ import { LogoModule } from '@ui/logo/logo.component'
   selector: 'md-header',
   template: `
     <md-container>
-      <md-logo>belfubu</md-logo>
+      <md-logo>abelfubu</md-logo>
 
       <nav>
         <ul>

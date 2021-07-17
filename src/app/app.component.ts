@@ -6,45 +6,15 @@ import { DataService } from './services/data.service'
 
 @Component({
   selector: 'md-root',
-  template: `
-    <md-cursor>
-      <section data-scroll-container #el>
-        <md-header>
-          <li #hover>Home</li>
-          <li #hover>About</li>
-          <i class="fas fa-lightbulb" #hover (click)="toggleDarkMode()"></i>
-        </md-header>
-
-        <md-container>
-          <router-outlet></router-outlet>
-        </md-container>
-
-        <main *ngIf="files$ | async as files">
-          <!-- <ngx-md [path]="files[1].download_url"></ngx-md> -->
-        </main>
-      </section>
-      <md-social></md-social>
-    </md-cursor>
-  `,
-  styles: [
-    `
-      main {
-        padding: 2rem 8vw;
-      }
-
-      i {
-        color: var(--primary);
-        cursor: pointer;
-        margin-left: 1rem;
-      }
-    `,
-  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  scroll!: LocomotiveScroll
   @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>
+  scroll!: LocomotiveScroll
   url = 'assets/md/a.md'
   files$ = this.dataService.repoFiles$
+  isDarkMode = true
 
   constructor(
     private readonly dataService: DataService,
@@ -68,6 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   toggleDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode
     this.document.body.classList.toggle('dark-mode')
   }
 }

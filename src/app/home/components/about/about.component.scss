@@ -1,5 +1,4 @@
 :host {
-  // @include mixins.auto-grid(450px, 3rem);
   align-items: center;
   display: grid;
   gap: 3rem;
@@ -16,14 +15,17 @@
   }
 
   .img {
-    background-color: var(--primary);
+    background: linear-gradient(var(--accent), var(--primary));
     border-radius: var(--radius-lg);
+    display: flex;
     overflow: hidden;
   }
 }
 
 img {
   aspect-ratio: 12 / 16;
+  height: 100%;
+  margin-top: auto;
   mix-blend-mode: multiply;
   object-fit: cover;
   object-position: center;
