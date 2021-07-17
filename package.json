@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -46,10 +47,13 @@
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "eslint": "^7.26.0",
+    "husky": "^7.0.0",
     "jasmine-core": "~3.7.0",
     "jest": "27.0.5",
     "karma-coverage": "~2.0.3",
+    "lint-staged": "^11.0.1",
     "ng-packagr": "^12.0.0",
+    "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-sass-guidelines": "^8.0.0",
     "typescript": "~4.2.3"
