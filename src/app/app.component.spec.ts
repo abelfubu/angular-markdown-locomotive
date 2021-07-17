@@ -5,7 +5,7 @@ import { createSpyObj } from 'jest-createspyobj'
 import { AppComponent } from './app.component'
 import { DataService } from './services/data.service'
 
-xdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let dataServiceSpy: Record<string, jest.Mock>
 
   beforeEach(async () => {
@@ -21,13 +21,11 @@ xdescribe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
-    fixture.detectChanges()
     expect(app).toBeTruthy()
   })
 
   it('should contain a router-outlet directive', () => {
     const fixture = TestBed.createComponent(AppComponent)
-    fixture.detectChanges()
     const compiled = fixture.nativeElement
     expect(compiled.querySelector('router-outlet')).toBeTruthy()
   })

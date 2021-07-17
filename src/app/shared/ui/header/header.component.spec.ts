@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ContainerModule } from '@ui/container/container.component'
+import { CursorComponent } from '@ui/cursor/cursor.component'
+import { LogoModule } from '@ui/logo/logo.component'
 
 import { HeaderComponent } from './header.component'
 
@@ -9,6 +12,13 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [HeaderComponent],
+      imports: [LogoModule, ContainerModule],
+      providers: [
+        {
+          provide: CursorComponent,
+          useValue: { addHoverElements: (elements: unknown[]) => elements },
+        },
+      ],
     }).compileComponents()
   })
 
@@ -22,17 +32,8 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy()
   })
 
-  it('should render title received as input', () => {
-    const title = 'HELLO'
-    component.title = title
+  it('should query hover elements', () => {
     fixture.detectChanges()
-    expect(fixture.nativeElement.querySelector('h3').textContent).toBe(title)
-  })
-
-  it('should have image src received as input', () => {
-    const src = 'abcd'
-    component.logo = src
-    fixture.detectChanges()
-    expect(fixture.nativeElement.querySelector('img').src).toContain(src)
+    expect(component.lis.length).toBe(0)
   })
 })
