@@ -1,8 +1,48 @@
 # Markdown app
 
+### Prettier
+
+Install and configure prettier.
+
+1. Install pretiter: `npm install prettier`
+2. Create a `.prettierrc` file in your project root.
+
+```json
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 100,
+  "quoteProps": "consistent",
+  "arrowParens": "always"
+}
+```
+
+### Stylelint
+
+Install and configure style linter.
+
+1. Install stylelint: `npm i -D stylelint stylelint-config-sass-guidelines`
+2. Add stylelint config file to `.stylelintrc.json`
+
+```json
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "number-leading-zero": null,
+    "color-hex-length": null,
+    "max-nesting-depth": 4,
+    "selector-pseudo-element-no-unknown": null,
+    "selector-no-qualifying-type": null,
+    "selector-max-compound-selectors": 5
+  }
+}
+```
+
 ### Husky
 
-Install and configure husky to check commmits and pushes
+Install and configure husky to check commmits and pushes.
 
 1. `npx husky-init`
 2. `npm i -D lint-staged prettier`
