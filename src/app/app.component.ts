@@ -1,8 +1,14 @@
-import { DOCUMENT } from '@angular/common'
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core'
-import { ResizeObserver } from '@juggle/resize-observer'
-import LocomotiveScroll from 'locomotive-scroll'
-import { DataService } from './services/data.service'
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  HostBinding,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { ResizeObserver } from '@juggle/resize-observer';
+import LocomotiveScroll from 'locomotive-scroll';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'md-root',
@@ -10,16 +16,14 @@ import { DataService } from './services/data.service'
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>
-  scroll!: LocomotiveScroll
-  url = 'assets/md/a.md'
-  files$ = this.dataService.repoFiles$
-  isDarkMode = true
+  @ViewChild('el', { static: true }) el!: ElementRef<HTMLElement>;
+  @HostBinding('class.dark-mode') isDarkMode = true;
 
-  constructor(
-    private readonly dataService: DataService,
-    @Inject(DOCUMENT) private readonly document: Document,
-  ) {}
+  scroll!: LocomotiveScroll;
+  url = 'assets/md/a.md';
+  files$ = this.dataService.repoFiles$;
+
+  constructor(private readonly dataService: DataService) {}
 
   ngOnInit(): void {
     this.scroll = new LocomotiveScroll({
@@ -27,18 +31,17 @@ export class AppComponent implements OnInit, AfterViewInit {
       smooth: true,
       scrollFromAnywhere: true,
       resetNativeScroll: false,
-    })
+    });
   }
 
   ngAfterViewInit(): void {
     const ro = new ResizeObserver((entries) =>
       entries.forEach(() => this.scroll && this.scroll.update()),
-    )
-    ro.observe(this.el.nativeElement)
+    );
+    ro.observe(this.el.nativeElement);
   }
 
   toggleDarkMode(): void {
-    this.isDarkMode = !this.isDarkMode
-    this.document.body.classList.toggle('dark-mode')
+    this.isDarkMode = !this.isDarkMode;
   }
 }
