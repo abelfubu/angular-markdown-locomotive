@@ -1,5 +1,9 @@
 export class CursorComponentMock {
   addHoverElements(elements: unknown[]): unknown {
-    return elements
+    return elements;
+  }
+
+  removeHoverElements(elements: unknown[]): unknown {
+    return elements;
   }
 }

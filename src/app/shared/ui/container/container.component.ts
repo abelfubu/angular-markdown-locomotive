@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, NgModule } from '@angular/core'
+import { Component, HostBinding, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'md-container',
@@ -14,8 +14,8 @@ import { Component, HostBinding, Input, NgModule } from '@angular/core'
   ],
 })
 export class ContainerComponent {
-  @Input() maxWidth = 1100
-  @HostBinding('style.max-width') width = this.maxWidth + 'px'
+  @Input() maxWidth = 1100;
+  @HostBinding('style.max-width') width = this.maxWidth + 'px';
 }
 
 @NgModule({

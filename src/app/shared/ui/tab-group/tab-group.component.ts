@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
 import {
   AfterContentInit,
   Component,
@@ -7,9 +7,8 @@ import {
   NgModule,
   QueryList,
   ViewChildren,
-} from '@angular/core'
-import { CursorComponent } from '@ui/cursor/cursor.component'
-import { TabComponent } from '@ui/tab/tab.component'
+} from '@angular/core';
+import { TabComponent } from '@ui/tab/tab.component';
 
 @Component({
   selector: 'md-tab-group',
@@ -26,22 +25,20 @@ import { TabComponent } from '@ui/tab/tab.component'
   styleUrls: ['./tab-group.component.scss'],
 })
 export class TabGroupComponent implements AfterContentInit {
-  @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>
-  @ViewChildren('hover') hoverEls!: QueryList<ElementRef>
-
-  constructor(private readonly host: CursorComponent) {}
+  @ContentChildren(TabComponent) tabs!: QueryList<TabComponent>;
+  @ViewChildren('hover') hoverEls!: QueryList<ElementRef>;
 
   ngAfterContentInit(): void {
-    const selectedTab = this.tabs.find((tab) => tab.selected)
+    const selectedTab = this.tabs.find((tab) => tab.selected);
 
     if (!selectedTab && this.tabs.first) {
-      this.tabs.first.selected = true
+      this.tabs.first.selected = true;
     }
   }
 
   selectTab(tab: TabComponent): void {
-    this.tabs.forEach((element) => (element.selected = false))
-    tab.selected = true
+    this.tabs.forEach((element) => (element.selected = false));
+    tab.selected = true;
   }
 }
 

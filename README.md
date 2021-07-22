@@ -72,3 +72,14 @@ npx lint-staged --verbose
 
 ng test --coverage --watch=false
 ```
+
+6. Speeding angular builds.
+
+```json
+{
+  "scripts": {
+    "start": "NG_PERSISTENT_BUILD_CACHE=1 ng serve",
+    "build": "NG_PERSISTENT_BUILD_CACHE=1 ng build"
+  }
+}
+```

@@ -1,9 +1,10 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { CursorComponent } from './cursor.component';
 
-fdescribe('CursorComponent', () => {
+describe('CursorComponent', () => {
   let component: CursorComponent;
   let fixture: ComponentFixture<CursorComponent>;
+  const element = { nativeElement: document.createElement('button') };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -34,4 +35,39 @@ fdescribe('CursorComponent', () => {
     tick(100);
     expect(render).toHaveBeenCalled();
   }));
+
+  it('should add listeners', () => {
+    const rendererSpy = jest.spyOn(component['renderer'], 'listen');
+    component['addHoverListeners']([element]);
+    expect(rendererSpy).toHaveBeenCalledTimes(2);
+    expect(component.listeners.length).toBe(2);
+  });
+
+  it('should add hover elements', () => {
+    component.addHoverElements([element]);
+    expect(component.hoverElements.length).toBe(1);
+  });
+
+  it('should remove hover elements', () => {
+    component.addHoverElements([element]);
+    component.removeHoverElements([element]);
+    expect(component.hoverElements.length).toBe(0);
+  });
+
+  it('should change radius on mouse enter', () => {
+    const restartSpy = jest.spyOn(component.tl, 'restart');
+    const radius = component.renderedStyles.radius.current;
+    component.enter();
+    expect(component.renderedStyles.radius.current).toBe(radius * 1.2);
+    expect(restartSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should change radius on mouse leave', () => {
+    const restartSpy = jest.spyOn(component.tl, 'kill');
+    const radius = component.renderedStyles.radius.current;
+    component.enter();
+    component.leave();
+    expect(component.renderedStyles.radius.current).toBe(radius);
+    expect(restartSpy).toHaveBeenCalledTimes(1);
+  });
 });
