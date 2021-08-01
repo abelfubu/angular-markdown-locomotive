@@ -1,8 +1,8 @@
 <md-cursor>
   <section data-scroll-container #el>
     <md-header>
-      <li #hover>Home</li>
-      <li #hover>Blog</li>
+      <li #hover routerLink="home">Home</li>
+      <li #hover routerLink="blog">Blog</li>
       <div #hover>
         <span *ngIf="isDarkMode; else moon" (click)="toggleDarkMode()" class="far fa-sun"></span>
         <ng-template #moon>
@@ -14,10 +14,6 @@
     <md-container>
       <router-outlet></router-outlet>
     </md-container>
-
-    <main *ngIf="files$ | async as files">
-      <!-- <ngx-md [path]="files[1].download_url"></ngx-md> -->
-    </main>
   </section>
   <md-social></md-social>
 </md-cursor>

@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { ResizeObserver } from '@juggle/resize-observer';
 import LocomotiveScroll from 'locomotive-scroll';
-import { DataService } from './services/data.service';
 
 @Component({
   selector: 'md-root',
@@ -21,9 +20,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   scroll!: LocomotiveScroll;
   url = 'assets/md/a.md';
-  files$ = this.dataService.repoFiles$;
-
-  constructor(private readonly dataService: DataService) {}
 
   ngOnInit(): void {
     this.scroll = new LocomotiveScroll({
