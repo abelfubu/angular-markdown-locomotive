@@ -1,3 +1,5 @@
+@use 'mixins';
+
 :host {
   align-items: center;
   display: grid;
@@ -30,4 +32,21 @@ img {
   object-fit: cover;
   object-position: center;
   width: 100%;
+}
+
+p {
+  padding: 1rem 0;
+}
+
+.lists {
+  @include mixins.flex(flex-start);
+  gap: 4rem;
+  padding-left: 1rem;
+}
+
+li::marker {
+  color: var(--primary);
+  content: '\f0da'' ';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
 }

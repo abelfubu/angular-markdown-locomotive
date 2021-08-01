@@ -12,6 +12,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { CardModule } from '@ui/card/card.component';
 import { SubstringPipeModule } from '../shared/pipes/substring.pipe';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SubstringPipeModule } from '../shared/pipes/substring.pipe';
     HeroComponent,
     ProjectsComponent,
     RepositoriesComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,
