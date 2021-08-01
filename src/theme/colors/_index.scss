@@ -6,13 +6,14 @@
   --primary: #26c6da;
   --primary-light: #b2dbbf;
   --primary-dark: #83cad4;
-  --primary-alpha: #26c6da50;
+  --primary-alpha: #1a778385;
   --accent: #ff1654;
 
   .dark-mode {
     --dark: #14171c;
     --contrast: #e8eddf;
     --bg-dark: #a9afa9c7;
+    --primary-alpha: #26c6da50;
     --primary-dark: #032429;
   }
 }
