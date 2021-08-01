@@ -108,9 +108,9 @@ h3 {
 }
 
 .techs {
+  column-gap: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: flex-end;
 
   @include mixins.breakpoint-down(small) {
