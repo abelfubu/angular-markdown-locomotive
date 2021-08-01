@@ -1,6 +1,6 @@
 import { calcWinsize, getMousePos, lerp, map, randomFloat } from './utils';
 
-fdescribe('utils', () => {
+describe('utils', () => {
   it('should maap numbers', () => {
     const mapResult = map(1, 2, 3, 4, 5);
     expect(mapResult).toBe(3);
