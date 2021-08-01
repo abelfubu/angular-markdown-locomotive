@@ -1,13 +1,13 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { ContainerModule } from '@ui/container/container.component'
-import { CursorComponent } from '@ui/cursor/cursor.component'
-import { LogoModule } from '@ui/logo/logo.component'
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ContainerModule } from '@ui/container/container.component';
+import { CursorComponent } from '@ui/cursor/cursor.component';
+import { LogoModule } from '@ui/logo/logo.component';
 
-import { HeaderComponent } from './header.component'
+import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent
-  let fixture: ComponentFixture<HeaderComponent>
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -19,21 +19,26 @@ describe('HeaderComponent', () => {
           useValue: { addHoverElements: (elements: unknown[]) => elements },
         },
       ],
-    }).compileComponents()
-  })
+    }).compileComponents();
+  });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent)
-    component = fixture.componentInstance
-    fixture.detectChanges()
-  })
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create', () => {
-    expect(component).toBeTruthy()
-  })
+    expect(component).toBeTruthy();
+  });
 
   it('should query hover elements', () => {
-    fixture.detectChanges()
-    expect(component.lis.length).toBe(0)
-  })
-})
+    fixture.detectChanges();
+    expect(component.lis.length).toBe(0);
+  });
+
+  it('should toggle hidden', () => {
+    component.toggleHidden();
+    expect(component.hidden).toBeFalsy();
+  });
+});

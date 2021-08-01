@@ -1,6 +1,18 @@
+@use 'mixins';
+
 :host {
   display: flex;
   padding: 1rem 0;
+  @include mixins.breakpoint-down(medium) {
+    display: block;
+  }
+}
+
+ul {
+  overflow-x: auto;
+  @include mixins.breakpoint-down(medium) {
+    display: flex;
+  }
 }
 
 li {
@@ -11,9 +23,19 @@ li {
   line-height: 1rem;
   list-style: none;
   padding: 0.8rem 1.5rem;
+  transition: background-color 0.2s ease-in-out;
+
+  @include mixins.breakpoint-down(medium) {
+    border-bottom: 0.2rem solid var(--primary-alpha);
+    border-left: unset;
+  }
 
   &.selected {
     border-color: var(--primary);
     color: var(--primary);
+  }
+
+  &:hover {
+    background-color: var(--primary-alpha);
   }
 }

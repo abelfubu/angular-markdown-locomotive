@@ -1,0 +1,15 @@
+@use 'mixins';
+
+:host {
+  display: block;
+  margin: auto;
+  padding: 2rem 4rem;
+
+  @include mixins.breakpoint-down(medium) {
+    padding: 2rem;
+  }
+
+  @include mixins.breakpoint-down(small) {
+    padding: 1rem;
+  }
+}

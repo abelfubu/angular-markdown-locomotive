@@ -3,15 +3,7 @@ import { Component, HostBinding, Input, NgModule } from '@angular/core';
 @Component({
   selector: 'md-container',
   template: ` <ng-content></ng-content> `,
-  styles: [
-    `
-      :host {
-        display: block;
-        padding: 2rem 4rem;
-        margin: auto;
-      }
-    `,
-  ],
+  styleUrls: ['./container.component.scss'],
 })
 export class ContainerComponent {
   @Input() maxWidth = 1100;

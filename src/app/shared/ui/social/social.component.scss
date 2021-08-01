@@ -1,10 +1,23 @@
+@use 'mixins';
+
+:host {
+  @include mixins.breakpoint-down(medium) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+}
+
 .left,
 .right {
   align-items: center;
   bottom: 1rem;
-  display: flex;
-  flex-direction: column;
   position: fixed;
+
+  @include mixins.breakpoint-down(medium) {
+    position: static;
+  }
 }
 
 .left {
@@ -13,10 +26,18 @@
 
   ul {
     list-style: none;
+    @include mixins.breakpoint-down(medium) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   li {
     margin: 0.5rem 0;
+    @include mixins.breakpoint-down(medium) {
+      margin-right: 0.5rem;
+    }
   }
 }
 
@@ -25,5 +46,9 @@
 
   a {
     writing-mode: vertical-lr;
+
+    @include mixins.breakpoint-down(medium) {
+      writing-mode: horizontal-tb;
+    }
   }
 }
