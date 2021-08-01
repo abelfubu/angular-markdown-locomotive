@@ -16,7 +16,7 @@ $breakpoints-down: (
   grid-template-columns: repeat($columns, 1fr);
 }
 
-@mixin auto-grid($min: 300px, $gap: 1rem) {
+@mixin auto-grid($min: 240px, $gap: 1rem) {
   display: grid;
   gap: $gap;
   grid-template-columns: repeat(auto-fit, minmax($min, 1fr));

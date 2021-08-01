@@ -54,7 +54,7 @@ h3 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-sm);
   margin-right: -2rem;
   overflow: hidden;
   position: relative;
@@ -99,14 +99,6 @@ h3 {
   }
 }
 
-.card {
-  background-color: var(--primary-dark);
-  border-radius: 0.25rem;
-  box-shadow: 0 0 11px #0005;
-  margin: 1rem 0;
-  padding: 1.5rem;
-}
-
 .techs {
   column-gap: 2rem;
   display: flex;
@@ -116,6 +108,10 @@ h3 {
   @include mixins.breakpoint-down(small) {
     justify-content: flex-start;
   }
+}
+
+md-card {
+  margin: 1rem 0;
 }
 
 .links {

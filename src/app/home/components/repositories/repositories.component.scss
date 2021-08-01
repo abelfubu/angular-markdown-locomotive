@@ -1,0 +1,49 @@
+@use 'mixins';
+
+.grid {
+  @include mixins.auto-grid(15rem, 0.5rem);
+  display: grid;
+  padding: 2rem 0;
+}
+
+md-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  a,
+  .fa-folder {
+    color: var(--primary-alpha);
+    font-size: 1.5rem;
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+}
+
+p {
+  font-weight: 700;
+}
+
+.description {
+  align-items: bottom;
+  display: flex;
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1rem;
+  padding: 0.5rem 0;
+}
+
+.language {
+  font-size: 0.75rem;
+  font-weight: 300;
+  opacity: 0.5;
+  padding-top: 0.5rem;
+}

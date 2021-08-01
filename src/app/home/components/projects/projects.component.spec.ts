@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataServiceMock } from '../../services/data.service.mock';
 import { ProjectsComponent } from './projects.component';
@@ -18,6 +19,7 @@ describe('ProjectsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ProjectsComponent],
       providers: [DataServiceMock.getProvider()],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 

@@ -1,0 +1,15 @@
+<h4>Other Noteworthy Projects</h4>
+<div class="grid">
+  <md-card *ngFor="let repo of repos$ | async">
+    <div class="card-header">
+      <i class="fa fa-folder"></i>
+      <a [href]="repo.url" target="_blank" [title]="repo.name">
+        <i class="fab fa-github-square"></i>
+      </a>
+    </div>
+
+    <p>{{ repo.name }}</p>
+    <span class="description">{{ repo.description | substring }}</span>
+    <span class="language">{{ repo.language }}</span>
+  </md-card>
+</div>

@@ -9,6 +9,9 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { AboutComponent } from './components/about/about.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { RepositoriesComponent } from './components/repositories/repositories.component';
+import { CardModule } from '@ui/card/card.component';
+import { SubstringPipeModule } from '../shared/pipes/substring.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,15 @@ import { ProjectsComponent } from './components/projects/projects.component';
     AboutComponent,
     HeroComponent,
     ProjectsComponent,
+    RepositoriesComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ButtonModule, TabsModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    ButtonModule,
+    TabsModule,
+    CardModule,
+    SubstringPipeModule,
+  ],
 })
 export class HomeModule {}
