@@ -27,12 +27,3 @@
     writing-mode: vertical-lr;
   }
 }
-
-a {
-  color: var(--bg-dark);
-  transition: color 0.2s;
-
-  &:hover {
-    color: var(--primary);
-  }
-}

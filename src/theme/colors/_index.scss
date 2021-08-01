@@ -3,14 +3,15 @@
   --bg-dark: #333533;
   --contrast: #14171c;
   --contrast-dark: #14171c;
-  // --primary: #cddc39;
   --primary: #26c6da;
   --primary-light: #b2dbbf;
+  --primary-dark: #83cad4;
   --primary-alpha: #26c6da50;
   --accent: #ff1654;
 
   .dark-mode {
     --dark: #14171c;
     --contrast: #e8eddf;
+    --primary-dark: #032429;
   }
 }

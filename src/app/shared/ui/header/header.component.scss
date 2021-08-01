@@ -1,8 +1,10 @@
 @use 'mixins';
+@use 'fonts';
 
 :host {
   background-color: var(--dark);
   box-shadow: 0 1px 6px 1px #23232350;
+  font-family: fonts.$title;
   height: 4.5rem;
 }
 
@@ -18,7 +20,6 @@ ul {
 }
 
 ul::ng-deep li {
-  // color: var(--primary);
   counter-increment: css-counter 1;
   cursor: pointer;
   margin-left: 1rem;

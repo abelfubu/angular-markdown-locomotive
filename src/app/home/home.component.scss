@@ -1,3 +1,5 @@
+@use 'mixins';
+
 :host {
   counter-set: h4 0;
   display: block;
@@ -22,5 +24,9 @@
     position: absolute;
     top: 45%;
     width: 200px;
+
+    @include mixins.breakpoint-down(small) {
+      display: none;
+    }
   }
 }

@@ -1,10 +1,7 @@
 @use 'fonts';
 
 h1,
-h2,
-h3,
-h4 {
-  font-family: fonts.$title;
+h2 {
   letter-spacing: 0.025em;
   padding-bottom: 0.5rem;
 }
