@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky install",
-    "deploy": "ng deploy --base-href=\"/angular-markdown-locomotive/\""
+    "deploy": "ng deploy --base-href=\""
   },
   "private": true,
   "dependencies": {
