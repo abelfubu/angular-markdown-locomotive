@@ -1,18 +1,17 @@
 <h4>Github Repositories</h4>
 <div class="grid">
-  <md-card
-    *ngFor="let repo of repos$ | async; let index = index"
-    [bgImage]="'https://picsum.photos/300/200?' + letters[index]"
-  >
-    <div class="card-header">
-      <i class="fa fa-folder"></i>
-      <a [href]="repo.url" target="_blank" [title]="repo.name">
-        <i class="fab fa-github-square"></i>
-      </a>
-    </div>
+  <a class="card-link" [href]="repo.url" *ngFor="let repo of repos$ | async; let index = index">
+    <md-card [bgImage]="'https://picsum.photos/300/200?' + letters[index]">
+      <div class="card-header">
+        <i class="fa fa-folder"></i>
+        <a [href]="repo.url" target="_blank" [title]="repo.name">
+          <i class="fab fa-github-square"></i>
+        </a>
+      </div>
 
-    <p>{{ repo.name }}</p>
-    <span class="description">{{ repo.description | substring }}</span>
-    <span class="language">{{ repo.language }}</span>
-  </md-card>
+      <p>{{ repo.name }}</p>
+      <span class="description">{{ repo.description | substring }}</span>
+      <span class="language">{{ repo.language }}</span>
+    </md-card>
+  </a>
 </div>
