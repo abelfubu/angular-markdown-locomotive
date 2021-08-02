@@ -22,7 +22,7 @@ type ElementRefList = ElementRef[] | QueryList<ElementRef>;
 })
 export class CursorComponent implements AfterContentInit, OnDestroy {
   @Input() radius = 40;
-  @Input() color = 'var(--accent)';
+  @Input() color = 'var(--accent-alpha)';
 
   @ViewChild('cursorInner', { static: true }) cursorInner!: ElementRef<SVGCircleElement>;
   @ViewChild('feTurbulence', { static: true }) feTurbulence!: ElementRef;
