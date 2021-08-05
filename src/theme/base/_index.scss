@@ -36,3 +36,16 @@ body {
   outline: 2px dashed var(--accent);
   outline-offset: 3px;
 }
+
+ngx-md > * {
+  padding: 1rem 0;
+}
+
+ngx-md img {
+  max-width: 100%;
+  opacity: 0.5;
+}
+
+ngx-md p {
+  padding: 0.5rem 0;
+}

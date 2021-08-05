@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       Although I'm not currently looking for any new opportunities, my inbox is always open. Whether
       you have a question or just want to say hi, I'll try my best to get back to you!
     </p>
-    <md-button href="mailto:abelfubu@gmail.com">SAY HELLO</md-button>
+    <md-button href="mailto:abelfubu@gmail.com" text="SAY HELLO"></md-button>
     <p class="foot">Designed & Built by Abel de la Fuente</p>
   `,
   styles: [

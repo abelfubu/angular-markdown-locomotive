@@ -1,42 +1,24 @@
 import { CommonModule } from '@angular/common';
-import {
-  AfterContentInit,
-  Component,
-  ElementRef,
-  HostBinding,
-  Input,
-  NgModule,
-  OnDestroy,
-  ViewChild,
-} from '@angular/core';
-import { CursorComponent } from '@ui/cursor/cursor.component';
+import { Component, HostBinding, Input, NgModule } from '@angular/core';
 
 type ButtonType = 'primary' | 'secondary' | 'outline';
 
 @Component({
   selector: 'md-button',
   template: `
-    <a [href]="href">
-      <button #hover><ng-content></ng-content></button>
+    <a [href]="href" *ngIf="href">
+      <button>{{ text }}</button>
     </a>
+
+    <button *ngIf="!href">{{ text }}</button>
   `,
 })
-export class ButtonComponent implements AfterContentInit, OnDestroy {
+export class ButtonComponent {
   @Input() type: ButtonType = 'primary';
   @Input() href!: string;
+  @Input() text = '';
   @HostBinding('class') get className(): ButtonType {
     return this.type;
-  }
-  @ViewChild('hover', { static: true }) hover!: ElementRef;
-
-  constructor(private readonly host: CursorComponent) {}
-
-  ngAfterContentInit(): void {
-    this.host.addHoverElements([this.hover]);
-  }
-
-  ngOnDestroy(): void {
-    this.host.removeHoverElements([this.hover]);
   }
 }
 

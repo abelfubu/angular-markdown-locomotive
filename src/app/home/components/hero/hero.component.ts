@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
         digital experiences. Currently, I'm focused on building accessible, human-centered products
         at Sopra Steria.
       </p>
-      <md-button href="mailto:abelfubu@gmail.com">GET IN TOUCH</md-button>
+      <md-button href="mailto:abelfubu@gmail.com" text="GET IN TOUCH"></md-button>
     </section>
   `,
   styles: [

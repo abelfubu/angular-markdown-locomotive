@@ -4,9 +4,9 @@ import { NgModule, Pipe, PipeTransform } from '@angular/core';
   name: 'substring',
 })
 export class SubstringPipe implements PipeTransform {
-  transform(value: string | null): string {
+  transform(value: string | null, length = 50): string {
     if (!value) return '';
-    return value.length > 50 ? `${value.substring(0, 50)}...` : value;
+    return value.length > length ? `${value.substring(0, length)}...` : value;
   }
 }
 

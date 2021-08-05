@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
+import { map } from 'rxjs';
 import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'md-blog',
   template: `
-    <h1>WORK IN PROGRESS</h1>
-    <main *ngIf="files$ | async as files">
-      <md-card *ngFor="let file of files">
-        <pre>{{ file | json }}</pre>
+    <h1>Blog</h1>
+    <main *ngIf="posts$ | async as posts">
+      <md-card *ngFor="let post of posts" [bgImage]="post.img">
+        <h5>{{ post.title }}</h5>
+        <p>{{ post.description | substring: 300 }}</p>
+        <md-button [routerLink]="['/blog/', post.id]" type="outline" text="VER MÁS"></md-button>
       </md-card>
-      <ngx-md [path]="files[1].download_url"></ngx-md>
     </main>
   `,
-  styles: [],
+  styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent {
-  files$ = this.dataService.repoFiles$;
+  posts$ = this.dataService.repoFiles$.pipe(map((posts) => posts.reverse()));
 
   constructor(private readonly dataService: DataService) {}
 }

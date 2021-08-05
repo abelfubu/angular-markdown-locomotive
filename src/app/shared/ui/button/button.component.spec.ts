@@ -31,16 +31,6 @@ describe('ButtonComponent', () => {
     expect(component.className).toBe(component.type);
   });
 
-  it('should remove hover elements in host cursor element on destroy', () => {
-    const hostSpy = jest.spyOn(component['host'], 'removeHoverElements');
-    component.ngOnDestroy();
-    expect(hostSpy).toHaveBeenCalledWith([component.hover]);
-  });
-
-  it('should have child hover attribute', () => {
-    expect(component.hover).toBeDefined();
-  });
-
   @Component({
     selector: `md-host-component`,
     template: `<md-button input="secondary"></md-button>`,

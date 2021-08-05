@@ -2,8 +2,8 @@ pre[class*='language-'],
 code[class*='language-'] {
   color: #d4d4d4;
   direction: ltr;
-  font-family: Menlo, Monaco, Consolas, 'Andale Mono', 'Ubuntu Mono', 'Courier New', monospace;
-  font-size: 18px;
+  font-family: Fira;
+  font-size: 1rem;
   hyphens: none;
   line-height: 1.5;
   tab-size: 4;
@@ -59,7 +59,7 @@ pre[class*='language-'] {
 
 .token.comment,
 .token.prolog {
-  color: #6a9955;
+  color: #777777;
 }
 
 .token.punctuation,

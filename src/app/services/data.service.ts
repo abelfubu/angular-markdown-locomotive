@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
-import { RepoFile } from '@models/repo-file';
+import { PostMeta } from '@models/repo-file';
 import { GithubRepo } from '@models/repos';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  repoFiles$ = this.http.get<RepoFile[]>(environment.repoUrl);
+  repoFiles$ = this.http.get<PostMeta[]>('assets/data/posts.json');
   repos$ = this.http.get<GithubRepo[]>(environment.githubUrl);
 
   constructor(private readonly http: HttpClient) {}

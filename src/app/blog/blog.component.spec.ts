@@ -1,5 +1,6 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SubstringPipeMock } from '../shared/pipes/mocks/substring.pipe.mock';
 import { Observable } from 'rxjs';
 import { DataServiceMock } from '../services/data.service.mock';
 
@@ -11,7 +12,7 @@ describe('BlogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BlogComponent],
+      declarations: [BlogComponent, SubstringPipeMock],
       providers: [DataServiceMock.getProvider()],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
@@ -28,7 +29,7 @@ describe('BlogComponent', () => {
   });
 
   it('should have files observable', () => {
-    expect(component.files$).toBeInstanceOf(Observable);
-    component.files$.subscribe((files) => expect(files.length).toBe(2));
+    expect(component.posts$).toBeInstanceOf(Observable);
+    component.posts$.subscribe((posts) => expect(posts.length).toBe(2));
   });
 });
