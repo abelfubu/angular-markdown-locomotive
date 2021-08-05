@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RepoFile } from '@models/repo-file';
 import { environment } from '@env/environment';
+import { RepoFile } from '@models/repo-file';
 import { GithubRepo } from '@models/repos';
 
 @Injectable({
