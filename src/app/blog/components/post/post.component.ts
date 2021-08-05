@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '@env/environment';
 import { map, pluck } from 'rxjs';
 
 @Component({
@@ -10,7 +11,7 @@ import { map, pluck } from 'rxjs';
 export class PostComponent {
   path$ = this.activatedRoute.params.pipe(
     pluck('id'),
-    map((id) => `/assets/md/${id}.md`),
+    map((id) => `${environment.assetsUrl}/md/${id}.md`),
   );
 
   constructor(private readonly activatedRoute: ActivatedRoute) {}

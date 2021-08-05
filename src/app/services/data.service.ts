@@ -8,7 +8,7 @@ import { GithubRepo } from '@models/repos';
   providedIn: 'root',
 })
 export class DataService {
-  repoFiles$ = this.http.get<PostMeta[]>('assets/data/posts.json');
+  repoFiles$ = this.http.get<PostMeta[]>(`${environment.assetsUrl}/data/posts.json`);
   repos$ = this.http.get<GithubRepo[]>(environment.githubUrl);
 
   constructor(private readonly http: HttpClient) {}
