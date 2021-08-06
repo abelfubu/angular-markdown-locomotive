@@ -1,5 +1,5 @@
 export interface PostMeta {
-  id: string;
+  id: number;
   title: string;
   description: string;
   img: string;

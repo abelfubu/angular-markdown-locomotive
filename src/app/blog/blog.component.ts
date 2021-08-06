@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PostMeta } from '@models/repo-file';
+import { PostMeta } from '@models/post-meta';
 import { map } from 'rxjs';
 import { DataService } from '../services/data.service';
 

@@ -49,3 +49,12 @@ ngx-md img {
 ngx-md p {
   padding: 0.5rem 0;
 }
+
+ngx-md h1 {
+  font-size: 3rem;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+}
