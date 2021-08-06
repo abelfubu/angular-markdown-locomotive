@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  repoUrl:
-    'https://api.github.com/repos/abelfubu/angular-markdown-locomotive/contents/src/assets/md',
+  assetsUrl:
+    'https://raw.githubusercontent.com/abelfubu/angular-markdown-locomotive/main/src/assets',
   githubUrl: 'https://api.github.com/users/abelfubu/repos?sort=updated&per_page=21',
 };

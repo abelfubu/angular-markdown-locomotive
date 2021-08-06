@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Flex Playground",
+    "img": "https://github.com/abelfubu/flex/blob/main/meta.gif?raw=true",
+    "description": "A nicer look at your GitHub profile and repository stats with data visualizations of your top languages and stars. Sort through your top repos by number of stars, forks, and size.",
+    "techs": ["React", "Flex", "GitHub", "Vite", "Typescript"],
+    "githubLink": "https://github.com/abelfubu/flex",
+    "link": "https://abelfubu.github.io/flex/"
+  },
+  {
+    "title": "VsCode Dark Theme",
+    "img": "https://raw.githubusercontent.com/abelfubu/abelfubu-dark-vscode-theme/master/images/theme.gif",
+    "description": "A custom Dark theme for visual studio code that will save your eyes after countless hours working on the computer",
+    "techs": ["VsCode", "Azure"],
+    "githubLink": "https://github.com/abelfubu/abelfubu-dark-vscode-theme",
+    "link": "https://marketplace.visualstudio.com/items?itemName=abelfubu.abelfubu-dark"
+  },
+  {
+    "title": "3d Text with three.js",
+    "img": "https://github.com/abelfubu/three.js-text/blob/main/assets/Meta.png?raw=true",
+    "description": "Exploring the 3D world and it's capabilities with WebGL and three.js. Do not forget to click the mouse and move the screen...",
+    "techs": ["WebGL", "Three.js", "GitHub", "Webpack"],
+    "githubLink": "https://github.com/abelfubu/three.js-text",
+    "link": "https://abelfubu.github.io/three.js-text/"
+  }
+]

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { DataServiceMock } from '../services/data.service.mock';
 
 import { BlogComponent } from './blog.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BlogComponent', () => {
   let component: BlogComponent;
@@ -13,6 +14,7 @@ describe('BlogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [BlogComponent, SubstringPipeMock],
+      imports: [RouterTestingModule],
       providers: [DataServiceMock.getProvider()],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();

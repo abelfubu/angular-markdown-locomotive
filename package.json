@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "prepare": "husky install",
-    "deploy": "ng deploy"
+    "deploy": "ng deploy",
+    "scully": "npx scully --",
+    "scully:serve": "npx scully serve --"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,9 @@
     "@angular/router": "~12.2.0",
     "@briebug/jest-schematic": "^3.1.0",
     "@juggle/resize-observer": "^3.3.1",
+    "@scullyio/init": "^1.1.4",
+    "@scullyio/ng-lib": "^1.0.0",
+    "@scullyio/scully": "^1.0.0",
     "gsap": "^3.7.0",
     "jest-createspyobj": "^2.0.0",
     "locomotive-scroll": "^4.1.1",
