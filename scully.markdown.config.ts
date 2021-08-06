@@ -4,7 +4,7 @@ import './scully/plugins/posts.plugin';
 export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'markdown',
-  outDir: './dist/static',
+  outDir: './docs',
   routes: {
     '/blog/:id': {
       type: 'postsIds',
