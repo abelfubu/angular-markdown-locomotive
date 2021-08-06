@@ -34,9 +34,14 @@ export class PostComponent {
   createMeta(post: PostMeta): void {
     this.title.setTitle(post.title);
     this.meta.addTags([
-      { property: 'og:description', content: post.description },
-      { property: 'og:image', content: post.img },
-      { property: 'og:title', content: post.title },
+      { ['data-rh']: 'true', property: 'og:description', content: post.description },
+      { ['data-rh']: 'true', name: 'description', content: post.description },
+      { ['data-rh']: 'true', property: 'og:image', content: post.img },
+      { ['data-rh']: 'true', name: 'image', content: post.img },
+      { ['data-rh']: 'true', property: 'og:title', content: post.title },
+      { ['data-rh']: 'true', property: 'og:type', content: 'article' },
+      { ['data-rh']: 'true', name: 'title', content: post.title },
+      { ['data-rh']: 'true', name: 'author', content: 'Abel de la Fuente' },
     ]);
   }
 }
