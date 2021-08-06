@@ -40,7 +40,7 @@ export class PostComponent {
       { ['data-rh']: 'true', name: 'image', content: post.img },
       { ['data-rh']: 'true', property: 'og:title', content: post.title },
       { ['data-rh']: 'true', property: 'og:type', content: 'article' },
-      { ['data-rh']: 'true', property: 'og:url', content: `https://abelfubu.dev/blog/${post.id}` },
+      { ['data-rh']: 'true', property: 'og:url', content: `https://abelfubu.dev/blog/${post.id}/` },
       { ['data-rh']: 'true', name: 'title', content: post.title },
       { ['data-rh']: 'true', name: 'author', content: 'Abel de la Fuente' },
     ]);
