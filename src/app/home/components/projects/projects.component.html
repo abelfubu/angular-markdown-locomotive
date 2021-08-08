@@ -1,7 +1,7 @@
 <h4>Some things I've Built</h4>
 <div class="grid" *ngFor="let project of projects$ | async">
   <div class="project-image" [style.backgroundImage]="'url(' + project.img + ')'">
-    <a [href]="project.link" target="_blank" [attr.alt]="project.title"></a>
+    <a [href]="project.link" target="_blank" [attr.aria-label]="project.title" rel="noreferrer"></a>
   </div>
   <div class="project-description">
     <h5>Featured Project</h5>
@@ -13,10 +13,10 @@
       <p *ngFor="let tech of project.techs">{{ tech }}</p>
     </div>
     <div class="links">
-      <a [href]="project.githubLink" target="_blank" #hover>
+      <a [href]="project.githubLink" target="_blank" #hover aria-label="Github" rel="noreferrer">
         <i class="fab fa-github-square"></i>
       </a>
-      <a [href]="project.link" target="_blank" #hover>
+      <a [href]="project.link" target="_blank" #hover aria-label="See more" rel="noreferrer">
         <i class="fas fa-link"></i>
       </a>
     </div>
