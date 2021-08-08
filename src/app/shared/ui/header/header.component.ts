@@ -8,6 +8,7 @@ import {
   NgModule,
   QueryList,
 } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ContainerModule } from '@ui/container/container.component';
 import { CursorComponent } from '@ui/cursor/cursor.component';
 import { LogoModule } from '@ui/logo/logo.component';
@@ -16,7 +17,7 @@ import { LogoModule } from '@ui/logo/logo.component';
   selector: 'md-header',
   template: `
     <md-container *ngIf="isMatched$ | async as isSmall">
-      <md-logo>abelfubu</md-logo>
+      <md-logo routerLink="">abelfubu</md-logo>
 
       <nav
         [class.mobile]="isSmall.matches"
@@ -55,7 +56,7 @@ export class HeaderComponent implements AfterContentInit {
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [CommonModule, LogoModule, ContainerModule, LayoutModule],
+  imports: [CommonModule, LogoModule, ContainerModule, LayoutModule, RouterModule],
   exports: [HeaderComponent],
 })
 export class HeaderModule {}

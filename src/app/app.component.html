@@ -1,8 +1,15 @@
 <md-cursor>
   <section data-scroll-container #el>
     <md-header>
-      <li #hover routerLink="home">Home</li>
-      <li #hover routerLink="blog">Blog</li>
+      <li
+        #hover
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </li>
+      <li #hover routerLink="blog" routerLinkActive="active">Blog</li>
       <div #hover>
         <span *ngIf="isDarkMode; else moon" (click)="toggleDarkMode()" class="far fa-sun"></span>
         <ng-template #moon>

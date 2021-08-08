@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core'
+import { Component, NgModule } from '@angular/core';
 
 @Component({
   selector: 'md-logo',
@@ -27,6 +27,7 @@ import { Component, NgModule } from '@angular/core'
     `
       :host {
         align-items: center;
+        cursor: pointer;
         display: flex;
         font-family: 'Oleo Script', cursive;
         font-size: 1.5rem;

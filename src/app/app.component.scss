@@ -25,6 +25,11 @@ span {
   margin-left: 1rem;
 }
 
+.active {
+  background-color: var(--accent-alpha);
+  border-radius: var(--radius-sm);
+}
+
 @keyframes fade-in {
   from {
     transform: scale(0);

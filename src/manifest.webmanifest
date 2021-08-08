@@ -1,10 +1,10 @@
 {
-  "name": "abelfubu",
+  "name": "Abelfubu",
   "short_name": "abelfubu",
-  "theme_color": "#1a778385",
+  "theme_color": "#1a7783",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "./",
+  "scope": "/",
   "start_url": "./",
   "icons": [
     {
