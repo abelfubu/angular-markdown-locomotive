@@ -18,7 +18,6 @@ import { environment } from '../environments/environment';
     ScullyLibModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   bootstrap: [AppComponent],
