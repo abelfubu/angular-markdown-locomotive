@@ -2,4 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 ng test --coverage --watch=false
+npm run deploy
 
