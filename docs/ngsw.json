@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1632216395488,
+  "timestamp": 1632217925303,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -93,7 +93,7 @@
     "/DK.5e250198ea7b4519ff62.ttf": "7b52916db53f74ebede5db962528249482b62293",
     "/Fira.6b9962fb8abe11686753.ttf": "444439efad5b16d47ac0051e6826a3404c2fb5ee",
     "/assets/data/posts.json": "846d5a859ccb2c85f7a63d348de808bc8ab03b00",
-    "/assets/data/projects.json": "e48c458d1cf317a608d1f7adb8dbf440657306e2",
+    "/assets/data/projects.json": "23796c991d144e23b21d84af7987463050fe61e2",
     "/assets/fonts/DK.ttf": "7b52916db53f74ebede5db962528249482b62293",
     "/assets/fonts/Fira.ttf": "444439efad5b16d47ac0051e6826a3404c2fb5ee",
     "/assets/icons/icon-128x128.png": "e52a1c81caa0266daf3e87824b09ae701db5fc94",

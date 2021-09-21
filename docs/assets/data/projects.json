@@ -1,7 +1,7 @@
 [
   {
     "title": "Flex Playground",
-    "img": "assets/images/flex.gif",
+    "img": "https://raw.githubusercontent.com/abelfubu/angular-markdown-locomotive/main/src/assets/images/flex.gif",
     "description": "A nicer look at your GitHub profile and repository stats with data visualizations of your top languages and stars. Sort through your top repos by number of stars, forks, and size.",
     "techs": ["React", "Flex", "GitHub", "Vite", "Typescript"],
     "githubLink": "https://github.com/abelfubu/flex",
@@ -9,7 +9,7 @@
   },
   {
     "title": "VsCode Dark Theme",
-    "img": "assets/images/theme.gif",
+    "img": "https://raw.githubusercontent.com/abelfubu/angular-markdown-locomotive/main/src/assets/images/theme.gif",
     "description": "A custom Dark theme for visual studio code that will save your eyes after countless hours working on the computer",
     "techs": ["VsCode", "Azure"],
     "githubLink": "https://github.com/abelfubu/abelfubu-dark-vscode-theme",
