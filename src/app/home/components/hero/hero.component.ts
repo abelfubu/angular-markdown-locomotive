@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       <p>
         I'm a software engineer specializing in building (and occasionally designing) exceptional
         digital experiences. Currently, I'm focused on building accessible, human-centered products
-        at Sopra Steria.
+        at Fever.
       </p>
       <md-button href="mailto:abelfubu@gmail.com" text="GET IN TOUCH"></md-button>
     </section>

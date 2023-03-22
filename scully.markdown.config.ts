@@ -5,9 +5,5 @@ export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'markdown',
   outDir: './docs',
-  routes: {
-    '/blog/:id': {
-      type: 'postsIds',
-    },
-  },
+  routes: {},
 };
