@@ -30,6 +30,8 @@ jobs:
         if: github.event_name == 'push'
         run: yarn run build
         timeout-minutes: 5
+      - name: Copy CNAME
+        run: cp docs/CNAME dist/markdown/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
