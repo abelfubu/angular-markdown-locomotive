@@ -11,15 +11,16 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
-      imports: [LogoModule, ContainerModule],
-      providers: [
+    declarations: [HeaderComponent],
+    imports: [LogoModule, ContainerModule],
+    providers: [
         {
-          provide: CursorComponent,
-          useValue: { addHoverElements: (elements: unknown[]) => elements },
+            provide: CursorComponent,
+            useValue: { addHoverElements: (elements: unknown[]) => elements },
         },
-      ],
-    }).compileComponents();
+    ],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

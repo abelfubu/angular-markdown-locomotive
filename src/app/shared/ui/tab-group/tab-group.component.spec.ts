@@ -10,9 +10,10 @@ describe('TabGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TabGroupComponent],
-      providers: [{ provide: CursorComponent, useValue: CursorComponentMock }],
-    }).compileComponents();
+    declarations: [TabGroupComponent],
+    providers: [{ provide: CursorComponent, useValue: CursorComponentMock }],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

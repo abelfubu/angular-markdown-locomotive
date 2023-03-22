@@ -29,7 +29,7 @@ jobs:
       - name: Build Project
         if: github.event_name == 'push'
         run: yarn run deploy
-        timeout-minutes: 3
+        timeout-minutes: 5
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

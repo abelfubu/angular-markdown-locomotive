@@ -1,0 +1,141 @@
+{
+  "configVersion": 1,
+  "timestamp": 1679492264272,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/141.b2891e3520a75a95.js",
+        "/940.0ce8c5bf55a8fdc5.js",
+        "/common.b5e2de0f0be297aa.js",
+        "/index.html",
+        "/main.bc24bd09dadfe326.js",
+        "/manifest.webmanifest",
+        "/polyfills.cb13df086bf25334.js",
+        "/runtime.52d7b2f7ba509cb9.js",
+        "/styles.9e534fd7983c4cf8.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/DK.be501946ae983a23.ttf",
+        "/Fira.e0ccdc617416acdd.ttf",
+        "/assets/data/posts.json",
+        "/assets/data/projects.json",
+        "/assets/fonts/DK.ttf",
+        "/assets/fonts/Fira.ttf",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/flex.gif",
+        "/assets/images/palette.svg",
+        "/assets/images/profile.png",
+        "/assets/images/theme.gif",
+        "/assets/md/1.md",
+        "/assets/scully-routes.json",
+        "/favicon.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-perform",
+      "patterns": [
+        "\\/assets\\/data"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "api-fresh",
+      "patterns": [
+        "https:\\/\\/raw\\.githubusercontent\\.com\\/abelfubu\\/angular-markdown-locomotive\\/main\\/src\\/assets",
+        "https:\\/\\/api\\.github\\.com\\/users\\/abelfubu\\/repos\\?sort=updated&per_page=21"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/141.b2891e3520a75a95.js": "838f09b4480680bbbfe2f752acacaaaa1bc91584",
+    "/940.0ce8c5bf55a8fdc5.js": "db6dfe86ab43c9aac9f3da3fc08ae1cfd7ceccf8",
+    "/DK.be501946ae983a23.ttf": "7b52916db53f74ebede5db962528249482b62293",
+    "/Fira.e0ccdc617416acdd.ttf": "444439efad5b16d47ac0051e6826a3404c2fb5ee",
+    "/assets/data/posts.json": "846d5a859ccb2c85f7a63d348de808bc8ab03b00",
+    "/assets/data/projects.json": "23796c991d144e23b21d84af7987463050fe61e2",
+    "/assets/fonts/DK.ttf": "7b52916db53f74ebede5db962528249482b62293",
+    "/assets/fonts/Fira.ttf": "444439efad5b16d47ac0051e6826a3404c2fb5ee",
+    "/assets/icons/icon-128x128.png": "e52a1c81caa0266daf3e87824b09ae701db5fc94",
+    "/assets/icons/icon-144x144.png": "cdaae41397eaf5c0073e5c27c50e679caa35523f",
+    "/assets/icons/icon-152x152.png": "454ae12a70ddc097d13ce72b919dbbd084268d48",
+    "/assets/icons/icon-192x192.png": "8a920b8b55c4b884921d669e1554f95faeb5608b",
+    "/assets/icons/icon-384x384.png": "068838e9773ad09536647f14c014f9222e77c7a3",
+    "/assets/icons/icon-512x512.png": "4b4d7be63a17d8da1fa7b4780bef0a18c2bd0fe8",
+    "/assets/icons/icon-72x72.png": "3edc1b3885afe2f567437e107f94fe5bc5465666",
+    "/assets/icons/icon-96x96.png": "8695d06cf8f9a3180754cf61791295425d6437be",
+    "/assets/images/flex.gif": "0173d77708f3b66d3900c02d31f68cab7d4c4532",
+    "/assets/images/palette.svg": "b68b5a1a5d988b8db19af13186590d93580f7d9f",
+    "/assets/images/profile.png": "6f711f28842bbaa90878eef2fff57617b94b1e15",
+    "/assets/images/theme.gif": "5913726b01e8297070d07fd269ce303285f063c1",
+    "/assets/md/1.md": "b26c5b280b8bb428984427920331d70482ddd144",
+    "/assets/scully-routes.json": "9a9c2369fe337a1eea33f2e0e3ff46201202763f",
+    "/common.b5e2de0f0be297aa.js": "6fd6fdb8e15a4db503732b5dab539b8c1d70c09d",
+    "/favicon.svg": "e1598ae34d67fdf58265644b5a7024b3f36d700f",
+    "/index.html": "0f4687ffe72c3d8283c2fa9f38ef737763c2e919",
+    "/main.bc24bd09dadfe326.js": "9ee67662183b59f78db5fbeec6b738df8ec4d077",
+    "/manifest.webmanifest": "43f5c31edb58ae392d02c1a4a118ef2cea975c4e",
+    "/polyfills.cb13df086bf25334.js": "946cc87755d8d3fcc5b055421580d5a1e864af76",
+    "/runtime.52d7b2f7ba509cb9.js": "2dc5d1de051720f5e2a487278dd8c93b47339180",
+    "/styles.9e534fd7983c4cf8.css": "44388ab9d5302bb9a75b5010f71acca3aacf8a1f"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

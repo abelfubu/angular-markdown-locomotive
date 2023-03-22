@@ -13,11 +13,12 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     dataServiceSpy = createSpyObj('DataService', ['get']);
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
-      providers: [{ provide: DataService, useValue: dataServiceSpy }],
-      schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
+    imports: [RouterTestingModule],
+    declarations: [AppComponent],
+    providers: [{ provide: DataService, useValue: dataServiceSpy }],
+    schemas: [NO_ERRORS_SCHEMA],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

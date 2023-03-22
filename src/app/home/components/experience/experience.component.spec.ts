@@ -11,10 +11,11 @@ describe('ExperienceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ExperienceComponent],
-      imports: [TabsModule],
-      providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
-    }).compileComponents()
+    declarations: [ExperienceComponent],
+    imports: [TabsModule],
+    providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
+    teardown: { destroyAfterEach: false }
+}).compileComponents()
   })
 
   beforeEach(() => {

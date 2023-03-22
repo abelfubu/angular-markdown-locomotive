@@ -11,9 +11,10 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ButtonComponent, TestHostComponent],
-      providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
-    }).compileComponents();
+    declarations: [ButtonComponent, TestHostComponent],
+    providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

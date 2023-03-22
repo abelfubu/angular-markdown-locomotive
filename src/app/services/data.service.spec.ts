@@ -12,9 +12,10 @@ describe('DataService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [{ provide: HttpClient, useValue: httpSpy }],
-    });
+    imports: [HttpClientTestingModule],
+    providers: [{ provide: HttpClient, useValue: httpSpy }],
+    teardown: { destroyAfterEach: false }
+});
     service = TestBed.inject(DataService);
   });
 

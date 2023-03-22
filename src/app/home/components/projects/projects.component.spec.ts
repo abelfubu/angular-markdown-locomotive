@@ -17,10 +17,11 @@ describe('ProjectsComponent', () => {
   };
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectsComponent],
-      providers: [DataServiceMock.getProvider()],
-      schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
+    declarations: [ProjectsComponent],
+    providers: [DataServiceMock.getProvider()],
+    schemas: [NO_ERRORS_SCHEMA],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

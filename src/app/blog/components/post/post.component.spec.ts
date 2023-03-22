@@ -12,15 +12,16 @@ describe('PostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PostComponent],
-      providers: [
+    declarations: [PostComponent],
+    providers: [
         { provide: ActivatedRoute, useValue: { params: of(1) } },
         { provide: Title, useValue: { setTitle: jest.fn() } },
         { provide: Meta, useValue: { updateTag: jest.fn(), addTags: jest.fn() } },
         DataServiceMock.getProvider(),
-      ],
-      schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

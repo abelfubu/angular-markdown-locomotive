@@ -11,10 +11,11 @@ describe('HeroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HeroComponent],
-      imports: [ButtonModule],
-      providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
-    }).compileComponents()
+    declarations: [HeroComponent],
+    imports: [ButtonModule],
+    providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
+    teardown: { destroyAfterEach: false }
+}).compileComponents()
   })
 
   beforeEach(() => {

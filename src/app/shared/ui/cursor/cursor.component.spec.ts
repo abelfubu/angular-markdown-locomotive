@@ -8,8 +8,9 @@ describe('CursorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CursorComponent],
-    }).compileComponents();
+    declarations: [CursorComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

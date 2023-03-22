@@ -11,10 +11,11 @@ describe('RepositoriesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RepositoriesComponent, SubstringPipeMock],
-      providers: [DataServiceMock.getProvider()],
-      schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
+    declarations: [RepositoriesComponent, SubstringPipeMock],
+    providers: [DataServiceMock.getProvider()],
+    schemas: [NO_ERRORS_SCHEMA],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

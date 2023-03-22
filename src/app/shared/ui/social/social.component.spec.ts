@@ -10,9 +10,10 @@ describe('SocialComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SocialComponent],
-      providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
-    }).compileComponents();
+    declarations: [SocialComponent],
+    providers: [{ provide: CursorComponent, useClass: CursorComponentMock }],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {

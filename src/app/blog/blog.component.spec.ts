@@ -13,11 +13,12 @@ describe('BlogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BlogComponent, SubstringPipeMock],
-      imports: [RouterTestingModule],
-      providers: [DataServiceMock.getProvider()],
-      schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
+    declarations: [BlogComponent, SubstringPipeMock],
+    imports: [RouterTestingModule],
+    providers: [DataServiceMock.getProvider()],
+    schemas: [NO_ERRORS_SCHEMA],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   });
 
   beforeEach(() => {
